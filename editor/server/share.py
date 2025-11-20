@@ -68,5 +68,9 @@ def get(name: str):
     params.pop('time')
     params.pop('ray_id')
     params.pop('client_ip')
-    # TODO: cache
-    return render_cf_error_page(params=params, allow_html=False, use_cdn=True, show_creator=True), 200
+    params['creator_info'] = {
+        'hidden': False,
+        'text': 'CF Error Page Editor',
+        'link': f'https://virt.moe/cloudflare-error-page/editor/?from={name}',
+    }
+    return render_cf_error_page(params=params, allow_html=False, use_cdn=True), 200

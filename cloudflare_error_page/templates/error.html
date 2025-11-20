@@ -99,9 +99,10 @@
                 {% set perf_sec_by = params.perf_sec_by or {} %}
                 <span class="cf-footer-item sm:block sm:mb-1"><span>Performance &amp; security by</span> <a rel="noopener noreferrer" href="{{perf_sec_by.link or 'https://www.cloudflare.com/'}}" id="brand_link" target="_blank">{{perf_sec_by.text or 'Cloudflare'}}</a></span>
 
-                {% if show_creator %}
+                {% set creator_info = params.creator_info or {} %}
+                {% if not creator_info.get('hidden', True) %} {# default: hidden #}
                 <span class="cf-footer-separator sm:hidden">&bull;</span>
-                <span class="cf-footer-item sm:block sm:mb-1">Created with <a href="https://virt.moe/cloudflare-error-page/editor/" target="_blank">CF Error Page Editor</a></span>
+                <span class="cf-footer-item sm:block sm:mb-1">Created with <a href="{{creator_info.link}}" target="_blank">{{creator_info.text}}</a></span>
                 {% endif %}
             </p>
         </div><!-- /.error-footer -->

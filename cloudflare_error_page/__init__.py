@@ -19,7 +19,7 @@ def get_resources_folder() -> str:
     return os.path.join(os.path.dirname(os.path.abspath(__file__)), 'resources')
 
 
-def render(params: dict, allow_html: bool=True, use_cdn: bool=True, show_creator: bool=False) -> str:
+def render(params: dict, allow_html: bool=True, use_cdn: bool=True) -> str:
     """
     Render a customized Cloudflare error page.
     """
@@ -34,4 +34,4 @@ def render(params: dict, allow_html: bool=True, use_cdn: bool=True, show_creator
         params['what_can_i_do'] = html.escape(params.get('what_can_i_do', ''))
 
     template = env.get_template("error.html")
-    return template.render(params=params, resources_use_cdn=use_cdn, show_creator=show_creator)
+    return template.render(params=params, resources_use_cdn=use_cdn)
