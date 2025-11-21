@@ -136,6 +136,9 @@
           "what_can_i_do": "Visit the site before it crashes someday."
         },
       };
+      if (window.location.search == '') {
+        window.history.pushState('sss', '', '?s');
+      }
 
       function extractUrlParam(str, key) {
         const urlParams = new URLSearchParams(str)
@@ -155,20 +158,19 @@
           headers: {
             'Accept': 'application/json'
           },
-        })
-        .then(response => {
+        }).then(response => {
           if (!response.ok) {
             throw new Error('failed to get preset');
           }
           return response.json();
-        })
-        .then(result => {
+        }).then(result => {
           if (result.status != 'ok') {
             return
           }
           console.log(result.parameters)
           initialConfig = result.parameters
           loadConfig(initialConfig);
+          render()
         })
       }
 
@@ -214,7 +216,7 @@
       function readConfig() {
         return {
           title: $('title').value,
-          error_code: Number($('error_code').value) || 0,
+          error_code: Number($('error_code').value) || 500,
           more_information: {
             hidden: !!$('more_hidden').checked,
             text: $('more_text').value,
@@ -329,7 +331,7 @@
           })
       }
       function exportJSON() {
-        let content = JSON.stringify(lastCfg)
+        let content = JSON.stringify(lastCfg, null, 4)
         const file = new File([content], 'cloudflare-error-page-params.json', {
           type: 'text/plain',
         })
@@ -417,6 +419,7 @@
     body {
       zoom: 90%;
     }
+
     /* Layout: editor + preview */
     .app {
       display: flex;
@@ -734,8 +737,8 @@
 
           <label for="what_happened" class="fw-semibold">What happened?</label>
           <div class="control">
-            <textarea id="what_happened" class="form-control compact" placeholder="There is an internal server error on Cloudflare's network.
-"></textarea>
+            <textarea id="what_happened" class="form-control compact"
+              placeholder="There is an internal server error on Cloudflare's network."></textarea>
           </div>
           <!-- </div> -->
 
@@ -784,7 +787,8 @@
           </div>
 
           <div class="mt-2" style="font-size: 0.9em;">You can also embed the error page into your own website. See
-            <a href="https://github.com/donlon/cloudflare-error-page#quickstart-for-programmers" target="_blank">Quickstart</a> in the
+            <a href="https://github.com/donlon/cloudflare-error-page#quickstart-for-programmers"
+              target="_blank">Quickstart</a> in the
             homepage for steps.
           </div>
 
@@ -797,7 +801,7 @@
           <h6><strong>Preview</strong></h6>
         </div>
 
-        <iframe id="previewFrame" class="preview-frame" sandbox="allow-same-origin allow-popups allow-forms"></iframe>
+        <iframe id="previewFrame" class="preview-frame" sandbox="allow-scripts"></iframe>
       </div>
 
     </div>
