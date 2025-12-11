@@ -1,7 +1,8 @@
 {
-  "name": "refactor-project",
+  "type": "module",
+  "name": "Cloudflare error page",
   "version": "1.0.0",
-  "description": "A refactored project generating an HTML error page",
+  "description": "A cloudflare error page generator",
   "scripts": {
     "build": "node build.js",
     "test": "vite preview --outDir dist"
@@ -9,5 +10,9 @@
   "devDependencies": {
     "ejs": "^3.1.10",
     "vite": "^6.0.0"
+  },
+  "dependencies": {
+    "@minify-html/node": "^0.18.1",
+    "html-minifier-terser": "^7.2.0"
   }
 }
