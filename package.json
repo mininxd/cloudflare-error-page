@@ -1,0 +1,8 @@
+{
+  "name": "refactor-project",
+  "version": "1.0.0",
+  "description": "A refactored project generating an HTML error page",
+  "scripts": {
+    "build": "node build.js"
+  }
+}
