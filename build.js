@@ -109,6 +109,32 @@ async function generateIndexHtml(pages) {
             font-size: 14px;
             margin-top: 5px;
         }
+        footer {
+            margin-top: 2em;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            border-top: 1px solid #eee;
+        }
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        .footer-links a {
+            color: #007cba;
+            text-decoration: none;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -124,6 +150,13 @@ async function generateIndexHtml(pages) {
             `).join('')}
         </ul>
     </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a target="_blank" href="https://github.com/mininxd/cloudflare-error-page">GitHub</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
     `.trim();
