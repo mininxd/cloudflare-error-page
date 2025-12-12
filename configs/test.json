@@ -1,0 +1,38 @@
+{
+    "title": "I'm a teapot",
+    "error_code": "418",
+    "more_information": {
+        "hidden": false,
+        "text": "cloudflare.com",
+        "link": "https://cloudflare.com",
+        "for": "more information"
+    },
+    "browser_status": {
+        "status": "error",
+        "location": "You",
+        "name": "Browser",
+        "status_text": "Error"
+    },
+    "cloudflare_status": {
+        "status": "ok",
+        "location": "Cloudflare",
+        "name": "Cloudflare",
+        "status_text": "Working"
+    },
+    "host_status": {
+        "status": "ok",
+        "location": "Website",
+        "name": "Host",
+        "status_text": "Working"
+    },
+    "error_source": "Browser",
+    "what_happened": "The page you are looking for was not found.",
+    "what_can_i_do": "Please check the URL or try again later.",
+    "perf_sec_by": {
+        "text": "Cloudflare",
+        "link": "https://cloudflare.com"
+    },
+    "time": "",
+    "ray_id": "",
+    "client_ip": ""
+}

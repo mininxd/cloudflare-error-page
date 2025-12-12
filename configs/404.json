@@ -4,7 +4,7 @@
     "more_information": {
         "hidden": false,
         "text": "cloudflare.com",
-        "link": "",
+        "link": "https://cloudflare.com",
         "for": "more information"
     },
     "browser_status": {
@@ -29,8 +29,8 @@
     "what_happened": "The page you are looking for was not found.",
     "what_can_i_do": "Please check the URL or try again later.",
     "perf_sec_by": {
-        "text": "",
-        "link": ""
+        "text": "Cloudflare",
+        "link": "https://cloudflare.com"
     },
     "time": "",
     "ray_id": "",
