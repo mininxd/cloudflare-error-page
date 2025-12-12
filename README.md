@@ -175,7 +175,7 @@ The demo server runs in our website did handle these. Take a look at [this file]
     // Configuration for "Visit ... for more information" line
     "more_information": {
         "hidden": false,
-        "text": "cloudflare.com", 
+        "text": "cloudflare.com",
         "link": "https://www.cloudflare.com/",
         "for": "more information",
     },
