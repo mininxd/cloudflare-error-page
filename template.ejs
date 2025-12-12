@@ -32,36 +32,36 @@
                 <div class="clearfix md:px-8">
 
                     <!-- Browser Status -->
-                    <div id="cf-browser-status" class=" relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center">
+                    <div id="cf-browser-status" class="<%= config.error_source === 'browser' ? 'cf-error-source ' : '' %>relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center">
                         <div class="relative mb-10 md:m-0">
                             <span class="cf-icon-browser block md:hidden h-20 bg-center bg-no-repeat"></span>
-                            <span class="cf-icon-ok w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"></span>
+                            <span class="<%= (config.browser_status && config.browser_status.status === 'error') ? 'cf-icon-error' : 'cf-icon-ok' %> w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"></span>
                         </div>
                         <span class="md:block w-full truncate">You</span>
                         <h3 class="md:inline-block mt-3 md:mt-0 text-2xl text-gray-600 font-light leading-1.3">Browser</h3>
-                        <span class="leading-1.3 text-2xl" style="color: #9bca3e">Working</span>
+                        <span class="leading-1.3 text-2xl" style="color: <%= (config.browser_status && config.browser_status.status === 'error') ? '#bd2426' : '#9bca3e' %>"><%= (config.browser_status && config.browser_status.status_text) || 'Working' %></span>
                     </div>
 
                     <!-- Cloudflare Status -->
-                    <div id="cf-cloudflare-status" class=" relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center">
+                    <div id="cf-cloudflare-status" class="<%= config.error_source === 'cloudflare' ? 'cf-error-source ' : '' %>relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center">
                         <div class="relative mb-10 md:m-0">
                             <span class="cf-icon-cloud block md:hidden h-20 bg-center bg-no-repeat"></span>
-                            <span class="cf-icon-ok w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"></span>
+                            <span class="<%= (config.cloudflare_status && config.cloudflare_status.status === 'error') ? 'cf-icon-error' : 'cf-icon-ok' %> w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"></span>
                         </div>
                         <span class="md:block w-full truncate"><%= (config.cloudflare_status && config.cloudflare_status.location) || 'Indonesia' %></span>
                         <h3 class="md:inline-block mt-3 md:mt-0 text-2xl text-gray-600 font-light leading-1.3" style="color: #2f7bbf;"><%= (config.cloudflare_status && config.cloudflare_status.name) || 'Cloudflare' %></h3>
-                        <span class="leading-1.3 text-2xl" style="color: #9bca3e">Working</span>
+                        <span class="leading-1.3 text-2xl" style="color: <%= (config.cloudflare_status && config.cloudflare_status.status === 'error') ? '#bd2426' : '#9bca3e' %>"><%= (config.cloudflare_status && config.cloudflare_status.status_text) || 'Working' %></span>
                     </div>
 
                     <!-- Host Status -->
-                    <div id="cf-host-status" class="cf-error-source relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center">
+                    <div id="cf-host-status" class="<%= config.error_source === 'host' ? 'cf-error-source ' : '' %>relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center">
                         <div class="relative mb-10 md:m-0">
                             <span class="cf-icon-server block md:hidden h-20 bg-center bg-no-repeat"></span>
-                            <span class="cf-icon-error w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"></span>
+                            <span class="<%= (config.host_status && config.host_status.status === 'error') ? 'cf-icon-error' : 'cf-icon-ok' %> w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"></span>
                         </div>
                         <span id="host-name" class="md:block w-full truncate"><%= (config.host_status && config.host_status.location) || 'Sites' %></span>
                         <h3 class="md:inline-block mt-3 md:mt-0 text-2xl text-gray-600 font-light leading-1.3">Host</h3>
-                        <span class="leading-1.3 text-2xl" style="color: #bd2426"><%= (config.host_status && config.host_status.status_text) || 'Not Found' %></span>
+                        <span class="leading-1.3 text-2xl" style="color: <%= (config.host_status && config.host_status.status === 'error') ? '#bd2426' : '#9bca3e' %>"><%= (config.host_status && config.host_status.status_text) || 'Not Found' %></span>
                     </div>
 
                 </div>

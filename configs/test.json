@@ -25,9 +25,9 @@
         "name": "Host",
         "status_text": "Working"
     },
-    "error_source": "Browser",
-    "what_happened": "The page you are looking for was not found.",
-    "what_can_i_do": "Please check the URL or try again later.",
+    "error_source": "browser",
+    "what_happened": "The browser is a teapot",
+    "what_can_i_do": "Change the valid browser",
     "perf_sec_by": {
         "text": "Cloudflare",
         "link": "https://cloudflare.com"
