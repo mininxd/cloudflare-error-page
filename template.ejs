@@ -195,7 +195,7 @@
 
 // 5. more_information
    const more_info = document.getElementById('more_information');
-if(cfg.more_information.hidden) {
+if(cfg.more_information && cfg.more_information.hidden) {
    more_info.classList.add("hidden");
 }
 
