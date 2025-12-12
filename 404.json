@@ -2,35 +2,35 @@
     "title": "Not Found",
     "error_code": "404",
     "more_information": {
-        "hidden": true,
+        "hidden": false,
         "text": "cloudflare.com",
         "link": "",
         "for": "more information"
     },
     "browser_status": {
         "status": "ok",
-        "location": "",
-        "name": "",
+        "location": "You",
+        "name": "Browser",
         "status_text": "Working"
     },
     "cloudflare_status": {
         "status": "ok",
-        "location": "Indonesia",
+        "location": "Cloudflare",
         "name": "Cloudflare",
         "status_text": "Working"
     },
     "host_status": {
         "status": "error",
-        "location": "",
+        "location": "Website",
         "name": "Host",
-        "status_text": "Error"
+        "status_text": "Not Found"
     },
     "error_source": "host",
-    "what_happened": "There is an internal server error on Cloudflare's network.",
-    "what_can_i_do": "Please try again in a few minutes.",
+    "what_happened": "The page you are looking for was not found.",
+    "what_can_i_do": "Please check the URL or try again later.",
     "perf_sec_by": {
-        "text": "Mininxd DNS",
-        "link": "https://dns.mininxd.xyz/"
+        "text": "",
+        "link": ""
     },
     "time": "",
     "ray_id": "",
