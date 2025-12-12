@@ -6,12 +6,6 @@
 
 This project creates customized error pages that mimic the well-known Cloudflare error page. You can also embed it into your website. The project generates self-contained HTML files with inlined CSS and JavaScript.
 
-## Online Editor
-
-Here's an online editor to create customized error pages. Try it out [here](https://virt.moe/cferr/editor/).
-
-![Editor](https://github.com/donlon/cloudflare-error-page/blob/images/editor.png?raw=true)
-
 ## Quickstart
 
 ### Prerequisites
@@ -29,28 +23,28 @@ cd cloudflare-error-page
 npm install
 ```
 
-### Usage
+### Development
 
-1. **Create Configuration**:
-   Create a JSON configuration file in the `configs/` directory (e.g., `configs/my-error.json`). You can use the examples in `configs/` as a reference.
+To start the development server with live reload:
 
-2. **Build**:
-   Run the build command to generate the HTML files:
+```bash
+npx vite
+```
 
-   ```bash
-   npm run build
-   ```
+This command will:
+1. Run the build script to generate HTML files from your configurations.
+2. Serve the generated pages from the `dist/` directory.
+3. Watch the `configs/` directory. If you modify, add, or delete a configuration file, it will automatically rebuild and reload the page.
 
-   This will generate HTML files in the `dist/` directory corresponding to your JSON configurations (e.g., `dist/my-error.html`). It also generates an `index.html` listing all generated pages.
+### Build for Production
 
-3. **Preview**:
-   To preview the generated pages:
+To generate the static HTML files without starting a server:
 
-   ```bash
-   npm run test
-   ```
+```bash
+npm run build
+```
 
-   This will start a local server serving the `dist/` directory.
+This will generate HTML files in the `dist/` directory corresponding to your JSON configurations (e.g., `dist/my-error.html`). It also generates an `index.html` listing all generated pages.
 
 ## Configuration
 
